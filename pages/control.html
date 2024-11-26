@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Peso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+  
+</head>
+<body>
+  <header class="header bg-light ">
+    <!-- Logo Home -->
+    <a href="../index.html" class="logo text-decoration-none text-dark">
+      <i class="bi bi-house-fill"></i> <!-- Ícono de Home -->
+      <span class="ms-2">Inicio</span>
+    </a>
+    
+    <h1 class="text-center flex-grow-1">Control de Peso PFT</h1>
+    
+  </header>
+  <div class="container my-5">
+   
+    <form id="weightForm" class="mt-4">
+      <div class="mb-3">
+        <label for="palletWeight" class="form-label">Peso Pallet (kg)</label>
+        <input type="number" class="form-control" id="palletWeight" placeholder="Ingrese peso del pallet">
+      </div>
+      <div class="mb-3">
+        <label for="boxCount" class="form-label">Cantidad de Cajas/Cajones</label>
+        <input type="number" class="form-control" id="boxCount" placeholder="Ingrese cantidad de cajas">
+      </div>
+      <div class="mb-3">
+        <label for="boxWeight" class="form-label">Peso Caja/Cajón (kg)</label>
+        <input type="number" class="form-control" id="boxWeight" placeholder="Ingrese peso por caja">
+      </div>
+      <div class="mb-3">
+        <label for="grossWeight" class="form-label">Peso en Bruto (kg)</label>
+        <input type="number" class="form-control" id="grossWeight" placeholder="Ingrese peso en bruto">
+      </div>
+      <button type="button" class="btn btn-primary w-100" onclick=calculateNetWeight()>Calcular Peso Neto</button>
+    </form>
+    <div id="netWeight" class="result-box mt-4">Peso Neto: -</div>
+  </div>
+
+  <script>
+    function calculateNetWeight() {
+      const palletWeight = parseFloat(document.getElementById('palletWeight').value) || 0;
+      const boxCount = parseInt(document.getElementById('boxCount').value) || 0;
+      const boxWeight = parseFloat(document.getElementById('boxWeight').value) || 0;
+      const grossWeight = parseFloat(document.getElementById('grossWeight').value) || 0;
+
+      // Cálculo del peso neto
+      const totalBoxWeight = boxCount * boxWeight;
+      const netWeight = grossWeight - (palletWeight + totalBoxWeight);
+
+      // Mostrar el resultado
+      document.getElementById('netWeight').innerText =netWeight.toFixed(2);
+    }
+  </script>
+</body>
+</html>

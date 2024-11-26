@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Jost', sans-serif;
+  background-image:url("../assets/img/elMercadoLogo.png");
+  background-repeat: no-repeat;
+ 
+  background-attachment: fixed;
+  background-position: center; 
+  
+   width: 100%;
+  padding-top: 70px; 
+      padding-bottom: 70px;
+}
+
+body .bgMenu {
+  background-color: orange;
+  color: black;
+}
+
+body .fondoCarousel {
+  background-color: orangered;
+  color: black;
+}
+
+body .textoCarousel {
+  position: absolute;
+  z-index: 1;
+  top: 85%;
+  left: 3%;
+  text-align: center;
+  color: white;
+  font-size: 4vw;
+  background-color: orange;
+  border-radius: 10px 0px;
+}
+body .divPrueba {
+  position: relative;
+  display: inline-block;
+}
+body header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0px;
+}
+
+body #logo {
+  border-radius: 10px;
+  width: 150px;
+
+	
+}
+
+#titulo
+{
+
+
+
+position: absolute;
+top:10px;
+}
+
+#precioTotal
+{
+color: red;
+}
+
+#entrega
+{
+background-color:red;
+color:white;
+border-radius: 5px;
+}
+
+#funes
+{
+ color:green;
+}
+body .titulo_principal {
+  z-index: 2;
+  border-radius: 10px;
+}
+body .titulo_page {
+  font-size: 3rem !important;
+  color: orangered;
+  display: inline;
+}
+body .titulo_page2 {
+  font-size: 3rem !important;
+  color: rgb(102, 19, 102);
+  display: inline;
+}
+body .subTituloPage {
+  z-index: 2;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 100px;
+  animation-name: tituloMove;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+@keyframes tituloMove {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    left: 0px;
+    top: 100px;
+  }
+}
+body .imgCarousel {
+  width: 100%;
+  justify-content: center !important;
+  align-items: center !important;
+}
+body .carouselIndex {
+  justify-content: center;
+  align-items: center;
+}
+body .bgOrange {
+  background-color: orangered;
+  color: black;
+  font-size: 1rem;
+  border-width: 0px;
+}
+body .bgOrangeClaro {
+  background-color: orange;
+  color: black;
+  font-size: 1rem;
+}
+body .bgOrangeIntermedio {
+  background-color: orange;
+  color: black;
+  font-size: 1rem;
+  border: none;
+}
+body footer {
+  align-items: center;
+  text-align: center;
+
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: rgb(8,8,8);
+background: white;
+      padding: 10px;
+      text-align: center;
+
+
+}
+
+body .leyendaFooter {
+  text-align: left !important;
+  display: block;
+  font-size: 1rem;
+}
+body .redes {
+  margin-top: 5px;
+  width: 15%;
+  font-size: 2rem;
+  text-align: center;
+}
+body .borderCard {
+  border-radius: 5px;
+}
+
+.textoPrincipal {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.textoSecundario {
+  font-size: 1.2rem;
+}
+
+body {
+  background-size: 20%;
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Jost', sans-serif;
+  width: 100%;
+}
+body .fondoBg {
+background: rgb(8,8,8);
+background: linear-gradient(90deg, #4974a4 0%, #2c4662	 49%, #162331 100%);
+}
+
+.iconoLink {
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 100%;
+  padding: 3%;
+}
+
+.textoSub {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.titulos {
+  color: orange;
+}
+
+.borderInsti {
+  border-color: orange !important;
+  border-width: 2px !important;
+}
+
+.imgGaleria:hover {
+  width: 200%;
+  height: 200%;
+  z-index: 2;
+}
+
+.contenedorInfraestructura {
+  width: 100px;
+}
+
+#botonContacto {
+  background-color: orange;
+  border-color: orangered;
+}
+
+#mapa {
+  width: 100%;
+  height: 100%;
+}
+
+#form {
+  background-color: orangered;
+  color: black;
+  background: linear-gradient(90deg, rgb(241, 66, 16) 0%, rgb(241, 187, 13) 100%, rgb(0, 212, 255) 100%);
+  border-radius: 5px;
+  height: 100%;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+  margin-top: 20px;
+}
+
+.item .thumb {
+  width: 25%;
+  cursor: pointer;
+  float: left;
+}
+
+.item .thumb img {
+  width: 100%;
+  margin: 2px;
+}
+
+.item img {
+  width: 100%;
+}
+
+.verde{
+ color:green;
+}
+
+.bgGreen {
+background-color:black;
+color:white!important;
+border-color:black;
+border-width:thin;
+}
+
+.bgGreen: hover {
+background-color:black;
+color:white!important;
+border-color:black;
+border-width:thin;
+}
+
+#divCentral
+{
+background-image:url("../img/logog.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center;
+
+}
+
+.fVerde
+{
+background-color:none;
+border-width:2px;
+color:white;
+}
+
+.btnCortes
+{
+ font-size:0.75rem;
+ margin-bottom:5px;
+ 
+}
+
+.bgSection	
+{
+ height:50px;
+ 
+}
+
+
+ .dot-container {
+      display: flex;
+      justify-content: center;
+      visibility: hidden;
+    }
+    
+    .dot {
+      width: 15px;
+      height: 15px;
+      background-color: green;
+      border-radius: 50%;
+      margin: 0 5px;
+      opacity: 0;
+      transform: translateY(0);
+      animation: jump 0.7s infinite;
+    }
+    
+    @keyframes jump {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+
+
+
+.bgAsado
+{
+ background-image:url("../img/fondoIndex.jpeg");
+background-repeat: no-repeat;
+ background-size:cover;
+
+  background-position:center;
+ background-color: black;
+}
+
+#pedidoTotalOculto
+{
+  display: none;
+}

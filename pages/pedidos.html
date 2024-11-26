@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pedido a Proveedores" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Think Solutions" />
+  <meta name="copyright" content="Think Solutions" />
+  <title>Pedido a proveedores</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Enlaces de Toastr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../cssPedidos/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+ 
+</head>
+<body class="py-0" onload="datosContactos(); fetchWeather(-31.4201, -64.1888);">
+
+<main>
+
+  
+  <section class="bgSection my-0 p-0">
+    <a href="../index.html" class="logo text-decoration-none text-dark">
+      <i class="bi bi-house-fill"></i> <!-- Ícono de Home -->
+      <span class="ms-2">Inicio</span>
+      <br>
+      <h1 class="text-center flex-grow-1">Pedidos Frutas y Verduras</h1>
+    </a>
+    
+    <div id="currentTemperature" class="row g-0"></div>
+  </section>
+
+  
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" id="weatherForecast"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="container-fluid mt-1 px-0 mx-0">
+    <section class="col-12 container-fluid text-center p-0">
+      <select title="proveedores" name="proveedores" id="selectProveedores" class="ml-0 mr-0 mt-1 col-10 border-1 border-2" onchange="datosProveedor()">
+        <option value="-">Seleccionar Proveedor</option>
+      </select>
+    </section>
+  </section>
+
+  <section id="cuerpo" class="col-lg-8 col-xl-8 mt-3 container-fluid"></section>
+
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFormLabel">Pedido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="pedidoTotal"></div>
+          <div id="pedidoTotalOculto"></div>
+        </div>
+        <div class="modal-footer">
+          <a id="enviarPedidoBtn" type="submit" Target="_blank" class="btn btn-success" onclick="exportarPedidoExcel(), enviarPedido() ">Enviar Pedido</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <footer class="z-2 p-1">
+    <div class="row justify-content-around">
+      <div class="col-12">
+        <button class="col-12 btn btn-success mx-1 text-white border border-0" data-bs-toggle="modal" data-bs-target="#modalForm" onClick="cargarPedido()">Terminar Pedido<i class="fas fa-shopping-cart"></i></button>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="../scripts/js/proveedores.js"></script>
+<script src="../scripts/scriptPedido.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>
