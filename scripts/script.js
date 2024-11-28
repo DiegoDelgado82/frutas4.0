@@ -46,8 +46,18 @@ function renderTasks() {
 
         if (task.status === 'Realizada') {
             row.classList.add('table-success');
-        } else if (task.status === 'Cancelada') {
-            row.classList.add('table-danger');
+        } else
+        {
+            if (task.status === 'Cancelada') {
+                row.classList.add('table-danger');
+            }
+            else
+                {
+                    if (task.status === 'En progreso') {
+                        row.classList.add('table-info');
+                    }
+                }
+        
         }
 
         row.innerHTML = `
@@ -189,3 +199,60 @@ generateImageBtn.addEventListener('click', () => {
     });
 });
 
+document.getElementById("showChartBtn").addEventListener("click", () => {
+    // Obtener los datos de las tareas desde la tabla
+    const rows = document.querySelectorAll("#taskTable tbody tr");
+    const taskData = {
+      Programado: 0,
+      "En progreso": 0,
+      Realizada: 0,
+      Cancelada: 0,
+    };
+  
+    // Recorrer las filas de la tabla y contar los estados
+    let contador=0;
+    rows.forEach((row) => {
+      const status = row.cells[2].innerText.trim(); // Columna de estado
+      if (taskData.hasOwnProperty(status)) {
+        taskData[status]++;
+      }
+    });
+  
+    // Generar los datos para el gráfico
+    const labels = Object.keys(taskData);
+    const data = Object.values(taskData);
+  
+    // Configuración del gráfico
+    const chartHtml = `
+      <canvas id="taskChart" width="400" height="400"></canvas>
+    `;
+  
+    Swal.fire({
+      title: "Estados de las Tareas",
+      html: chartHtml,
+      showCloseButton: true,
+      showConfirmButton: false,
+      didOpen: () => {
+        const ctx = document.getElementById("taskChart").getContext("2d");
+        new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Cantidad",
+                data: data,
+                backgroundColor: [
+                  "#007bff", // Programado
+                  "#ffc107", // En progreso
+                  "#28a745", // Realizada
+                  "#dc3545", // Cancelada
+                ],
+              },
+            ],
+          },
+        });
+      },
+    });
+  });
+  
