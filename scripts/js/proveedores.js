@@ -24,7 +24,7 @@ async function datosProveedor() {
   prov.forEach((proveedor) => {
   i++;
 	
-	if (proveedor.PROVEEDOR.toUpperCase()===nombreProveedor.toUpperCase())
+	if (proveedor.PROVEEDOR.toUpperCaskjkkj===nombreProveedor.toUpperCase())
 	{
 	 cuerpo.innerHTML=cuerpo.innerHTML+  "<div id='cortes"+i+ "' class=' row fondoBg  border border-white borderCard text-white pt-1'><h5 class='h5' id='ean"+i+"'>"+proveedor.EAN+ "</h5><h5 class='h5' id='desc"+i+"'>"+proveedor.DESCRIPCION+ "</h5><div class='col-6 card bg-transparent border-0 m-0 text-white'><h6>UM: <span id='um"+i+
 
@@ -41,7 +41,7 @@ async function datosProveedor() {
 cuerpo.innerHTML=cuerpo.innerHTML+"<br><br><br>	"
 
 
-}
+}r
 
 
 function incrementValue(button) {

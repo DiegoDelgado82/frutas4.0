@@ -260,3 +260,44 @@ $(function () {
   }
     }
   
+
+    let productos = [];
+
+// Obtener los datos del JSON al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('../products/plu.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al cargar el archivo JSON');
+      }
+      return response.json();
+    })
+    .then(data => {
+      produ = data;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
+
+// Función para buscar PLU
+function buscarPLU() {
+  const input = document.getElementById('buscarProducto').value.toUpperCase();
+  const producto = produ.find(p => p.nombre.includes(input) || p.plu === input);
+
+
+  // Mostrar el resultado
+  const sugerenciasDiv = document.getElementById('sugerencias');
+  sugerenciasDiv.innerHTML = ''; // Limpiar resultados anteriores
+  if (producto) {
+    sugerenciasDiv.innerHTML = `
+      <div class="alert alert-success" style="font-size: 1.5rem;">
+        <strong>PLU: ${producto.plu}</strong>
+      </div>`;
+  } else {
+    sugerenciasDiv.innerHTML = `
+      <div class="alert alert-danger" style="font-size: 1.5rem;">
+        Producto no encontrado. Intenta con otro nombre o código.
+      </div>`;
+  }
+}
