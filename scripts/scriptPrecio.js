@@ -301,3 +301,12 @@ function buscarPLU() {
       </div>`;
   }
 }
+
+function limpiarPLU() {
+  const producto= document.getElementById('buscarProducto');
+  const sugerenciasDiv = document.getElementById('sugerencias');
+  sugerenciasDiv.innerHTML = '';
+  producto.value=""
+  producto.focus();
+
+}
