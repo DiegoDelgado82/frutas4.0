@@ -265,7 +265,7 @@ $(function () {
 
 // Obtener los datos del JSON al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('../products/plu.json')
+  fetch('https://raw.githubusercontent.com/DiegoDelgado82/pluFrutas/refs/heads/main/plu.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error al cargar el archivo JSON');
